@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -ex
+
+if [ $# -ne 1 ]; then
+   echo "usage: $0 <PATH_TO_DISCORD_CLIENT_SECRET>"
+   exit 1
+fi
+
+exec docker run \
+   --mount "type=bind,source=${1},destination=/secrets/discord_client_secret" \
+   `docker build --quiet ./bot`

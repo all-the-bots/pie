@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -ex
+
+docker tag `docker build --quiet --target run ./bot` registry.allthebots.com/dlowe/pie:latest
+docker push registry.allthebots.com/dlowe/pie:latest

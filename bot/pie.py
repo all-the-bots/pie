@@ -1,11 +1,13 @@
 import discord
 
+import datetime
+
 client = discord.Client()
 
 
 @client.event
 async def on_ready():
-    print('logged in as {0.user}'.format(client), flush=True)
+    print('{} logged in as {}'.format(datetime.datetime.today(), client.user), flush=True)
 
 
 @client.event

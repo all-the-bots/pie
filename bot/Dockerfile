@@ -1,4 +1,4 @@
-FROM python:3.9.0-alpine AS dev-base
+FROM python:3.12.13-alpine AS dev-base
         WORKDIR /pie
         COPY requirements.txt ./
         RUN apk add --no-cache --virtual .build-deps gcc musl-dev \

@@ -2,7 +2,10 @@ import discord
 
 import datetime
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 
 @client.event
